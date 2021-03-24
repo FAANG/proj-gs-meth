@@ -902,7 +902,7 @@ process cgmap_meth_calling {
     saveAs: {filename -> "cgmap_methyl_call/$filename"}
 
     input:
-    set val(name), file(bam) from ch_meth_calling_cgmap
+    set val(name), file(bam) from ch_bam_cgmaptools
     
     output:
     set val(name), file("*_meth_call") into ch_cgmap_meth_call_results 

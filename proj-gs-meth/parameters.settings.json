@@ -242,10 +242,40 @@
             "type": "string"
         },
         {
+            "name": "cgmaptools_methylation_calling",
+            "label": "methylation calling cgmaptools",
+            "usage": "Path to cgmaptools outputs",
+            "group": "Meth calling",
+            "render": "file",
+            "type": "string",
+            "pattern": ".*",
+            "default_value": ""
+        },
+        {
+            "name": "cgmaptools_visualisation",
+            "label": "meth visualisation",
+            "usage": "Path to cgmaptools output",
+            "group": "Methylation visualisation",
+            "render": "file",
+            "type": "string",
+            "pattern": ".*",
+            "default_value": ""
+        },
+        {
+            "name": "methylKit",
+            "label": "methylKit",
+            "usage": "Path to methylKit",
+            "group": "Downstream analysis",
+            "render": "file",
+            "type": "string",
+            "pattern": ".*",
+            "default_value": ""
+        },
+        {
             "name": "container",
             "label": "Software container",
             "usage": "Dockerhub address for pipeline container",
-            "default_value": "nfcore/methylseq:latest",
+            "default_value": "jani94/methylation_j",
             "render": "textfield",
             "pattern": ".*",
             "type": "string",
