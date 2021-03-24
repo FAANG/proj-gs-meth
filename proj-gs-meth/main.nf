@@ -820,7 +820,7 @@ if( params.aligner == 'bwameth' ){
      * STEP 5 - Mark duplicates
      */
     if( params.skip_deduplication || params.rrbs ) {
-        ch_bam_sorted_for_markDuplicates.into { ch_bam_dedup_for_methyldackel; ch_bam_dedup_for_qualimap }
+        ch_bam_sorted_for_markDuplicates.into { ch_bam_dedup_for_methyldackel; ch_bam_dedup_for_qualimap; ch_bam_cgmaptools }
         ch_bam_index.set { ch_bam_index_for_methyldackel }
         ch_markDups_results_for_multiqc = Channel.from(false)
     } else {
@@ -907,18 +907,17 @@ process cgmap_meth_calling {
     output:
     set val(name), file("*_meth_call") into ch_cgmap_meth_call_results 
     
-    shell: 
-    '''
-    echo "hello"
-    '''
+    script:
+    """
+    cgmaptools convert bam2cgmap -b $bam -g $fasta -o ${name}_meth_call   
+    """ 
     }
 
 /*
-script:
-    """
+shell: 
+    '''
     echo "hello"
-    """  
-cgmaptools convert bam2cgmap -b $bam -g $fasta -o ${name}_meth_call
+    '''
 */
 /*STEP NEW2!! CGmap_visualization
  */
