@@ -589,7 +589,7 @@ if( params.aligner =~ /bismark/ ){
      * STEP 4 - Bismark deduplicate
      */
     if( params.skip_deduplication || params.rrbs ) {
-        ch_bam_for_bismark_deduplicate.into { ch_bam_dedup_for_bismark_methXtract; ch_bam_dedup_for_qualimap }
+        ch_bam_for_bismark_deduplicate.into { ch_bam_dedup_for_bismark_methXtract; ch_bam_dedup_for_qualimap; ch_bam_cgmaptools }
         ch_bismark_dedup_log_for_bismark_report = Channel.from(false)
         ch_bismark_dedup_log_for_bismark_summary = Channel.from(false)
         ch_bismark_dedup_log_for_multiqc  = Channel.from(false)
