@@ -966,7 +966,7 @@ process get_stats_mkit {
     saveAs: {filename -> "methyl_kit/$filename" } 
     
     input:
-    set val(name), file(mkit) from ch_cgmap_to_MKit
+    set val(name), file("*_MKit") from ch_cgmap_to_MKit
     
     output:
     set val(name), file("*_MKit_stat") into ch_MKit_results
