@@ -275,7 +275,7 @@
             "name": "container",
             "label": "Software container",
             "usage": "Dockerhub address for pipeline container",
-            "default_value": "jani94/methylation_j",
+            "default_value": "jani94/methylation_j:latest",
             "render": "textfield",
             "pattern": ".*",
             "type": "string",
