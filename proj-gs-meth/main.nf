@@ -926,7 +926,7 @@ process cgmap_visualisation {
     publishDir "${params.outdir}/cgmaptools", mode: 'copy',
     saveAs: {filename -> "cgmap_figures_data/$filename" }
     input:
-    set val(name), file(cg_map), file2(atcg_map) from ch_cgmap_meth_call_results
+    set val(name), file('*.CGmap.gz'), file2('*.ATCGmap.gz') from ch_cgmap_meth_call_results
     
     output:
     set val(name), file("*_cgmap_visualization") into ch_cgmap_visualization   //maybe later add to channel to create the html file??//
@@ -946,14 +946,15 @@ process cgmap_conversion_methKit {
     publishDir "${params.outdir}/methKit", mode: 'copy',
     saveAs: {filename -> "methyl_kit/$filename" }
     input:
-    set val(name), file(cg_map) from ch_cgmap_meth_call_results
+    set val(name), file('*.CGmap') from ch_cgmap_meth_call_results
     
     output:
     set val(name), file("*_MKit") into ch_cgmap_to_MKit 
     script:
     //add shell script to run python into your baseDir//
     """
-    python ${baseDir}/GMap_ToMethylKit.py ${cg_map} > ${name}.MKit
+    gunzip ${*.CGmap.gz}
+    python ${baseDir}/CGMap_ToMethylKit.py ${*.CGmap} > ${name}.MKit
     """
     }
 
