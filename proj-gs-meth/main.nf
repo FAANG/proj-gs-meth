@@ -941,7 +941,7 @@ process cgmap_visualisation {
 
 /*STEP NEW3!! Convert_cgmap_methKit
  */
-process cgmap_conversion_methKit {
+process cgmap_conversion_methkit {
     tag "$name"
     publishDir "${params.outdir}/methKit", mode: 'copy',
     saveAs: {filename -> "methyl_kit/$filename" }
@@ -960,7 +960,7 @@ process cgmap_conversion_methKit {
 
 /*STEP NEW4!! Run_MKit
  */
-process get_stats_MKit {
+process get_stats_mkit {
     tag "$name"
     publishDir "${params.outdir}/methKit", mode: 'copy',
     saveAs: {filename -> "methyl_kit/$filename" } 
