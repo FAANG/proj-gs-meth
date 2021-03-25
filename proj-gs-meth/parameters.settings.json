@@ -189,7 +189,7 @@
             "render": "file",
             "type": "string",
             "pattern": ".*",
-            "default_value": ""
+            "default_value": false
         },
         {
             "name": "bwa_meth_index",
@@ -199,7 +199,7 @@
             "render": "file",
             "type": "string",
             "pattern": ".*",
-            "default_value": ""
+            "default_value": false
         },
         {
             "name": "fasta_index",
@@ -209,7 +209,7 @@
             "render": "file",
             "type": "string",
             "pattern": ".*",
-            "default_value": ""
+            "default_value": false
         },
         {
             "name": "fasta",
@@ -249,7 +249,7 @@
             "render": "file",
             "type": "string",
             "pattern": ".*",
-            "default_value": ""
+            "default_value": false
         },
         {
             "name": "cgmaptools_visualisation",
@@ -259,7 +259,7 @@
             "render": "file",
             "type": "string",
             "pattern": ".*",
-            "default_value": ""
+            "default_value": false
         },
         {
             "name": "methylKit",
@@ -269,7 +269,7 @@
             "render": "file",
             "type": "string",
             "pattern": ".*",
-            "default_value": ""
+            "default_value": false
         },
         {
             "name": "container",
@@ -362,7 +362,7 @@
             "usage": "Save the generated reference files the the results directory.",
             "group": "Pipeline defaults",
             "render": "check-box",
-            "default_value": false,
+            "default_value": true,
             "type": "boolean"
         },
         {
@@ -399,7 +399,7 @@
             "render": "textfield",
             "pattern": ".*",
             "type": "string",
-            "default_value": ""
+            "default_value": false
         },
         {
             "name": "awsregion",
@@ -419,7 +419,7 @@
             "render": "textfield",
             "pattern": ".*",
             "type": "string",
-            "default_value": ""
+            "default_value": false
         },
         {
             "name": "tracedir",
