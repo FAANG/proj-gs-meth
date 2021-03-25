@@ -941,7 +941,7 @@ process cgmap_visualisation {
 
 /*STEP NEW3!! Convert_cgmap_methKit
  */
- process cgmap_conversion_methkit 
+/* process cgmap_conversion_methkit 
 {
     tag "$name"
     publishDir "${params.outdir}/methKit", mode: 'copy',
@@ -958,11 +958,11 @@ process cgmap_visualisation {
     gunzip ${*.CGmap.gz}
     python ${baseDir}/CGMap_ToMethylKit.py ${*.CGmap} > ${name}.MKit
     """
-    }
+    } */
 
 /*STEP NEW4!! Run_MKit
  */
-process get_stats_mkit {
+/*process get_stats_mkit {
     tag "$name"
     publishDir "${params.outdir}/methKit", mode: 'copy',
     saveAs: {filename -> "methyl_kit/$filename" } 
@@ -978,7 +978,7 @@ process get_stats_mkit {
     """
     R ${baseDir}methylkit_rscript.r // make r script more flexible //
     """
-    }
+    } */
 			
 			/*STEP make output file for WP4
 			*/
