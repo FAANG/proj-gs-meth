@@ -926,8 +926,8 @@ process cgmap_visualisation {
     publishDir "${params.outdir}/cgmaptools", mode: 'copy',
     saveAs: {filename -> "cgmap_figures_data/$filename" }
     input:
-    set val(name), file('*.CGmap.gz'), file2('*.ATCGmap.gz') from ch_cgmap_meth_call_results
-    
+    set val(name), file('*.CGmap.gz') from ch_cgmap_meth_call_results
+    file('*.ATCGmap.gz') from ch_cgmap_meth_call_results
     output:
     set val(name), file("*_cgmap_visualization") into ch_cgmap_visualization   //maybe later add to channel to create the html file??//
     //parts of script eg. c -> discuss what this should be or should request input from user?? //
