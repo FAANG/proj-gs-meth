@@ -941,10 +941,12 @@ process cgmap_visualisation {
 
 /*STEP NEW3!! Convert_cgmap_methKit
  */
-process cgmap_conversion_methkit {
+ process cgmap_conversion_methkit 
+{
     tag "$name"
     publishDir "${params.outdir}/methKit", mode: 'copy',
     saveAs: {filename -> "methyl_kit/$filename" }
+    
     input:
     set val(name), file('*.CGmap') from ch_cgmap_meth_call_results
     
