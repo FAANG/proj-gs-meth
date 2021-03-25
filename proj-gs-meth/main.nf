@@ -1098,7 +1098,6 @@ process output_documentation {
 
     input:
     file output_docs from ch_output_docs
-	file 
 
     output:
     file "results_description.html"
