@@ -1069,8 +1069,8 @@ process multiqc {
     file ('samtools/*') from ch_samtools_stats_results_for_multiqc.flatten().collect().ifEmpty([])
     file ('picard/*') from ch_markDups_results_for_multiqc.flatten().collect().ifEmpty([])
     file ('methyldackel/*') from ch_methyldackel_results_for_multiqc.flatten().collect().ifEmpty([])
-    file ('methKit/*') from ch_MKit_results.flatten().collect().ifEmpty([])      // won't work // 
-    file ('cgmaptools/*') from ch_cgmap_visualization.flatten().collect().ifEmpty([]) // won't work //
+    //file ('methKit/*') from ch_MKit_results.flatten().collect().ifEmpty([])//      // won't work // 
+    //file ('cgmaptools/*') from ch_cgmap_visualization.flatten().collect().ifEmpty([]) // // won't work //
     file ('qualimap/*') from ch_qualimap_results_for_multiqc.collect().ifEmpty([])
     file ('preseq/*') from preseq_results.collect().ifEmpty([])
     file ('software_versions/*') from ch_software_versions_yaml_for_multiqc.collect()
