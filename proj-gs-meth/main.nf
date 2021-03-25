@@ -218,7 +218,7 @@ ch_multiqc_config = file(params.multiqc_config, checkIfExists: true)
 ch_output_docs = file("$baseDir/docs/output.md", checkIfExists: true)
 
 
- * Create a channel for input read files
+ /* Create a channel for input read files
  */
 if (params.readPaths) {
     if (params.single_end) {
